@@ -1,0 +1,2 @@
+Filename,Mean for High Stress Group,Mean for Mid Stress Group,Mean for Low Stress Group,Std for High Stress Group,Std for Mid Stress Group,Std for Low Stress Group,T statistics,P value,How significant
+summary.csv,3.254115565956674,2.8392930651195605,3.5064724265406833,2.4768257439345334,3.9274522197872086,3.9868530722577886,-0.30908249898255447,0.7589432158193882,Not significant

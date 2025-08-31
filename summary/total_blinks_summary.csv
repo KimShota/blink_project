@@ -1,0 +1,20 @@
+Shapiro-Wilk p-value (Total Blinks),Normality of Blink Distribution,Pearson r,Pearson p-value,Pearson Significance,Spearman rho,Spearman p-value,Spearman Significance,Kendall tau,Kendall p-value,Kendall Significance,Regression Summary
+0.0,not normally distributed,-0.004,0.9126,Not Significant,0.02,0.5925,Not Significant,0.014,0.5869,Not Significant,"                    Robust linear Model Regression Results                    
+==============================================================================
+Dep. Variable:           Stress Score   No. Observations:                  748
+Model:                            RLM   Df Residuals:                      746
+Method:                          IRLS   Df Model:                            1
+Norm:                          HuberT                                         
+Scale Est.:                       mad                                         
+Cov Type:                          H1                                         
+Date:                Thu, 31 Jul 2025                                         
+Time:                        17:37:16                                         
+No. Iterations:                    11                                         
+================================================================================
+                   coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           53.4929      0.585     91.458      0.000      52.347      54.639
+total_blinks     0.0053      0.032      0.169      0.866      -0.057       0.067
+================================================================================
+
+If the model instance has been used for another fit with different fit parameters, then the fit options might not be the correct ones anymore ."
