@@ -1,8 +1,8 @@
 # Blink Project  
 
-A research-focused repository for analyzing **eye-blink patterns** and their relationship to **mental fatigue, attention, and stress**. This project uses Python-based statistical analysis, machine learning, and visualization methods to process large-scale blink datasets collected from VR-based experiments.  
+This repository contains research scripts and datasets for analyzing **eye-blink behavior** in relation to **mental fatigue, attentional engagement, and stress**. It was developed as part of a larger **VR-based fatigue assessment project** combining **eye-tracking, blink metrics, and statistical modeling**.  
 
-The analyses here contribute to developing **objective fatigue assessment algorithms**, validated with **gaze/blink datasets from 1,000+ participants** in VR cognitive tasks.  
+The aim is to provide robust tools to quantify how blinking patterns change across fatigue states and build towards **objective fatigue scoring algorithms**.  
 
 ---
 
@@ -14,6 +14,7 @@ blink_project/
 ├── plots_stress_score/ # Stress score visualizations
 ├── summary/ # Summary CSVs and processed data
 │
+├── README.md # Project documentation
 ├── blink_analysis_batcher.py # Batch processing of blink datasets
 ├── blink_duration_analysis.py # Blink duration analysis (fatigue & immersion)
 ├── boxcox_analysis.py # Box-Cox transformations for normalization
@@ -25,54 +26,63 @@ blink_project/
 ├── parametric_analysis.py # Parametric tests (t-tests, ANOVA, etc.)
 ├── rawdata.py # Raw data processing & cleaning pipeline
 ├── summary.csv # Main summary dataset (blink features)
-├── total_blinks_analysis.py # Total blink count analysis
-│
-└── README.md # Project documentation
-
+└── total_blinks_analysis.py # Total blink count analysis
 
 ---
 
-## 🔬 Analysis Features  
+## 🔬 Key Features  
 
-This repository implements **multiple blink-related metrics**, including:  
+- **Blink Duration Analysis**  
+  Study how blink duration reflects both **fatigue (longer blinks under fatigue)** and **immersion (longer blinks in non-fatigued states)**.  
 
-- **Blink Duration Analysis** – correlation with fatigue and attentional engagement.  
-- **Blink Frequency Analysis** – increased blinking under high fatigue states.  
-- **Burst Counts Analysis** – detection of blink flurries during fatigue.  
-- **Inter-Blink Interval Analysis** – changes in cognitive load and attention.  
-- **Mismatch Analysis** – irregular blink-timing events across tasks.  
-- **Grid Counts per Blink** – how gaze and blinks interact with visual exploration.  
-- **Parametric & Box-Cox Analysis** – ensuring statistical robustness and normality.  
-- **Group Comparisons (High vs Low Fatigue)** – statistical testing across participant groups.  
-- **Stage-Based KMeans Clustering** – unsupervised grouping of fatigue stages.  
-- **Stress Score Plots** – visualization of blink-derived fatigue/stress scores.  
+- **Blink Frequency Analysis**  
+  Show how **higher blink frequency** is linked to mental fatigue when sustained attention declines.  
+
+- **Blink Bursts (Flurries)**  
+  Detect clusters of rapid blinks as indicators of cognitive overload.  
+
+- **Mismatch Analysis**  
+  Identify irregular or inconsistent blink timing patterns.  
+
+- **Grid Counts per Blink**  
+  Measure how gaze coverage interacts with blinking during tasks.  
+
+- **Statistical Rigor**  
+  Includes **parametric testing**, **Box-Cox transformations**, and **Pearson/Spearman correlations** for robust analysis.  
+
+- **Machine Learning**  
+  Implements **KMeans clustering** to group participants into fatigue stages.  
+
+- **Visualization**  
+  Provides group-by plots, stress score distributions, and boxplots for interpretation.  
 
 ---
 
 ## 📊 Data & Workflow  
 
-1. **Input Data**: CSV datasets (per participant) with blink timing, duration, and gaze context.  
-2. **Preprocessing**: Normalization, log transformations, and outlier reduction.  
-3. **Statistical Analysis**: Pearson, Spearman, Welch’s t-test, ANOVA, Box-Cox.  
-4. **Machine Learning**: KMeans clustering for fatigue stage categorization.  
-5. **Visualization**: Group-by plots, stress score distributions, boxplots, and heatmaps.  
-6. **Output**: Summaries in `summary/`, plots in `plots_stress_score/` and `Group_By_Analysis_Plots/`.  
+1. **Input Data**: Participant-level CSV files with blink timings, durations, and gaze context.  
+2. **Preprocessing**: Z-score normalization, log transformations, and outlier handling.  
+3. **Analysis**:  
+   - Correlation testing (Pearson, Spearman)  
+   - Group comparisons (high vs low fatigue)  
+   - Parametric testing (t-test, ANOVA)  
+   - KMeans clustering of fatigue stages  
+4. **Outputs**:  
+   - Statistical results (`summary/`, `group_by_analysis_result.csv`)  
+   - Plots (`Group_By_Analysis_Plots/`, `plots_stress_score/`)  
 
 ---
 
 ## 📈 Research Context  
 
-This repository is part of a larger **VR-based fatigue research project**, which uses:  
+This project is part of a **VR-based eye-tracking system** designed to measure **brain fatigue** through blink metrics.  
 
-- **VR experiments** (Flash Mental Arithmetic, focus tasks, distraction-based trials).  
-- **Eye-tracking** (blink frequency, duration, bursts, mismatch).  
-- **Large-scale datasets** (1,000+ participants).  
-- **Goal**: Build a **practical brain fatigue scoring model** with predictive accuracy.  
-
-Findings so far:  
-- Higher blink frequency, bursts, and long inter-blink intervals correlate with **higher fatigue**.  
-- Longer blink duration can reflect **fatigue in high-fatigue states**, but also **immersion/engagement in low-fatigue states**.  
-- These nuanced patterns motivate building **adaptive fatigue algorithms**.  
+- Conducted with **1,000+ participants** in VR arithmetic and attention tasks.  
+- Metrics analyzed: blink frequency, duration, bursts, mismatch, and inter-blink intervals.  
+- Findings:  
+  - **High fatigue** → more frequent blinks, more bursts, longer inter-blink intervals.  
+  - **Low fatigue** → blink duration may reflect **immersion** instead of fatigue.  
+  - Supports building **adaptive algorithms** that distinguish between fatigue vs engagement.  
 
 ---
 
@@ -96,8 +106,8 @@ Clone the repository:
 git clone https://github.com/KimShota/blink_project.git
 cd blink_project
 
-Run an analysis (example: blink duration):
+Run an analysis (for example: blink duration):
 
 python blink_duration_analysis.py
 
-Results will be saved into the respective folders (summary/, Group_By_Analysis_Plots/, etc.).
+Outputs will be saved in the appropriate folders (summary/, Group_By_Analysis_Plots/, etc.).
